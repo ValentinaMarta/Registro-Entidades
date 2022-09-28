@@ -6,13 +6,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class TareaController extends AbstractController
+class LibroController extends AbstractController
 {
-    #[Route('/tarea', name: 'app_tarea')]
+    #[Route('/libro', name: 'app_libro')]
     public function index(): Response
     {
-        return $this->render('tarea/index.html.twig', [
-            'controller_name' => 'TareaController',
+        return $this->render('libro/index.html.twig', [
+            'controller_name' => 'LibroController',
         ]);
     }
 }
