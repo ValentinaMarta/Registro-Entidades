@@ -3,9 +3,11 @@
 {% block title %}New Libro{% endblock %}
 
 {% block body %}
-    <h1>Create new Libro</h1>
+<div class="form-control form-control-sm">
+    <h1>Crear nuevo Libro</h1>
 
     {{ include('libro/_form.html.twig') }}
-
-    <a href="{{ path('app_libro_index') }}">back to list</a>
+    
+    <a class="btn btn-primary" href="{{ path('app_libro_index') }}">Volver a la lista</a>
+    </div>
 {% endblock %}

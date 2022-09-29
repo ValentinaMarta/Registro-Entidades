@@ -2,9 +2,12 @@
 <nav class="navbar navbar-light bg-light">
   <div class="container">
     <a class="navbar-brand" href="#">
-      <img src="{{ absolute_url(asset('/librito.png')) }}">
-        <a class="nav-link active" aria-current="page" href="{#{ path('app_listado_libro') }#}#">Libros</a>
-  <a class="nav-link" href="{#{ path('app_crear_libro') }#}#">Crear</a>
+      <img src="{{ absolute_url(asset('/logo.png')) }}">
+      <img src="{{ absolute_url(asset('/logo.png')) }}">
+      <img src="{{ absolute_url(asset('/logo.png')) }}">
+      
+        <a class="nav-link active" aria-current="page" href="{{ path('app_libro_index') }}">Libros</a>
+  <a class="nav-link" href="{{ path('app_libro_new') }}">Crear</a>
     </a>
   </div>
 </nav>
