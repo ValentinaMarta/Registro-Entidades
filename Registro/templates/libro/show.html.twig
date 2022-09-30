@@ -29,11 +29,8 @@
             </tr>
         </tbody>
     </table>
-<a class="btn btn-primary" href="#" role="button">
-    <a href="{{ path('app_libro_index') }}">Volver a la lista</a>
-</a>
-<button type="button" class="btn btn-primary">
-    <a href="{{ path('app_libro_edit', {'id': libro.id}) }}">Editar</a>
-</button>
+    <a  class="btn btn-primary" role="button" href="{{ path('app_libro_index') }}">Volver a la lista</a>
+    <a class="btn btn-primary" role="button" href="{{ path('app_libro_edit', {'id': libro.id}) }}">Editar</a>
+
     {{ include('libro/_delete_form.html.twig') }}
 {% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Libros{% endblock %}
+
+{% block body %}
+   
+<div class="container-sm">
+ <h1>Libreria</h1>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Autora</th>
+                <th>Editorial</th>
+                <th>Precio</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for libro in libros %}
+            <tr>
+                <td>{{ libro.id }}</td>
+                <td>{{ libro.nombre }}</td>
+                <td>{{ libro.autora }}</td>
+                <td>{{ libro.editorial }}</td>
+                <td>{{ libro.precio }}</td>
+                <td>
+                
+                    <a class="btn btn-primary" href="{{ path('app_libro_show', {'id': libro.id}) }}">Mostrar detalles</a>
+                    <a class="btn btn-primary" href="{{ path('app_libro_edit', {'id': libro.id}) }}">Editar</a>
+                  
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    
+        <a class="btn btn-primary" href="{{ path('app_libro_new') }}">Crear nuevo libro</a>
+    </div>
+{% endblock %}
