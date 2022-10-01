@@ -8,11 +8,15 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class IndexController extends AbstractController
 {
-    #[Route('/', name: 'app_index')]
-    public function index(LibroRepository $libroRepository): Response
+    const ELEMENTOS_POR_PAGINA=10;
+    #[Route("/{pagina}", name: "index", defaults:["pagina" => 1], requirements:["pagina"=>"\d+"], methods: ['GET'])]
+
+    public function index(int $pagina,LibroRepository $libroRepository): Response
     {
-        return $this->render('index/index.html.twig', [
-            'libros' => $libroRepository->findAll(),
+      
+        return $this->render('index/Index.html.twig', [
+            'libros' => $libroRepository->buscarTodas($pagina, self::ELEMENTOS_POR_PAGINA),
+            'pagina'=> $pagina,
         ]);
     }
 }

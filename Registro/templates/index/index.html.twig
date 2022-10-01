@@ -42,4 +42,20 @@
     
         <a class="btn btn-primary" href="{{ path('app_libro_new') }}">Crear nuevo libro</a>
     </div>
+    <div class="mt-3">
+
+    {{include ('comunes/_paginacion.html.twig',
+    {
+        elementos_por_pagina:  constant(
+            'App\\Controller\\IndexController::ELEMENTOS_POR_PAGINA'
+            ), 
+            numero_total_elementos: libros.count,
+            pagina_actual: pagina
+    }
+    )
+    }}
+
+    </div>
 {% endblock %}
+
+
